@@ -115,6 +115,89 @@ for k in range(10):
         print(k)
 
 
+def hello(world):
+    print("hello",world)
+
+to = "jinyc"
+
+hello(to)
+
+def hello(world):
+    retVal = "hello"+str(world)
+    return retVal
+
+retVal = hello("test123")
+print(retVal)
+
+def func(number):
+    def in_func(number):
+        print(number)
+    print("in_func")
+    in_func(number+1)
+
+func(1)
+
+def count_length(word:str , num:int) -> int:
+    return len(word) * num
+
+print(count_length("jinyc",5))
+
+class cls:
+    pass
+
+class Diva:
+    version = "1.0"
+    def __init__(self,name="diva"):
+        self.name = name
+    def song(self , title="song"):
+        print(self.name+" sing the "+title)
+    def medley(self):
+        self.song()
+        self.song("second song")
+        self.song("third song")
+
+diva1 = Diva()
+diva2 = Diva("aaa")
+diva3 = Diva("111")
+
+def print_diva(diva):
+    print("-----")
+    print("name : ",diva.name)
+    print("version : "+diva.version)
+
+print_diva(diva1)
+print_diva(diva2)
+print_diva(diva3)
+
+
+voice_diva = Diva("haha")
+voice_diva.song()
+voice_diva.song("world song")
+voice_diva.medley()
+
+Diva.song(voice_diva,"tell your song")
+
+class Calculator:
+    def adder(a , b):
+        print(a+b)
+
+Calculator.adder(3,4)
+
+class Heroes(Calculator):
+    pass
+
+Heroes.adder(1,2)
+
+class Miku(Diva):
+    def __init__(self,module="class uniform"):
+        self.module = module
+        super().__init__("miku")
+
+    def dance(self):
+        print("dancing")
+
+miku = Miku()
+print(miku.version)
 
 
 
